@@ -11,7 +11,7 @@ class ClassComponent {
 		return
 	}
 
-	setState = function(newState, cb=function() {}, state = this.state) {
+	setState = async function(newState, cb=function() {}, state = this.state) {
 		this._logError(
 			typeof newState === 'object' || 
 			typeof newState === 'function' || 
@@ -26,7 +26,7 @@ class ClassComponent {
 			partState = {...newState}
 		}
 
-		this.state = {
+		await this.state = {
 			...state,
 			...partState
 		}
